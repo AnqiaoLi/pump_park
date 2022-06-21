@@ -1,0 +1,8 @@
+# tracks msgpack
+track_construction/tracks/
+track_construction/backup/
+
+*.ipynb
+*.msgpack
+
+launch.json
