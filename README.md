@@ -25,10 +25,10 @@ Install the msgpack under this python, in my case:
 
 The centerline of the track in pump_track_random.hipnc is expressed by cylindrical coordinate:
 $$
-\begin{aligned}
-\rho &= radial\_ amp * (\sum _{k=3}^{order} a_k\sin(k\theta) + b_k\cos(k\theta))\\
-z &= height\_ amp * (\sum _{k=3}^{order} c_k\sin(k\theta) + d_k\cos(k\theta))
-\end{aligned}
+\rho = radial\_ amp * (\sum _{k=3}^{order} a_k\sin(k\theta) + b_k\cos(k\theta))
+$$
+$$
+z = height\_ amp * (\sum _{k=3}^{order} c_k\sin(k\theta) + d_k\cos(k\theta))
 $$
 $a_k,b_k,c_k,d_k$ are randomly generated in [-1, 1]. $order, radial\_amp, height\_amp$ are adjustable parameters. In additon, bank_ratio is also adjustable which is used when sweeping the centerline to the track surface.
 
