@@ -1,6 +1,12 @@
 # pump_park
 
-This repository shows how to construct track files in .msgpack with Houdini.
+This repository shows how to construct random pump track files in .msgpack with Houdini.
+
+<p align="center">
+  <img src="https://github.com/AnqiaoLi/pump_park/blob/main/pump_track.png" alt="Motion Example" width="500"/>
+  <br/>
+  <em>A Visulization of randomly generated pump tracks in Issac Gym</em>
+</p>
 
 ## Installation
 First, find which python is used in Houdini, please refer to this link: https://www.sidefx.com/docs/houdini/hom/index.html 
@@ -23,14 +29,14 @@ Install the msgpack under this python, in my case:
 
 ## Houdini Model
 
-The centerline of the track in pump_track_random.hipnc is expressed by cylindrical coordinate:
-$$
-\rho = radial\_ amp * (\sum _{k=3}^{order} a_k\sin(k\theta) + b_k\cos(k\theta))
-$$
-$$
-z = height\_ amp * (\sum _{k=3}^{order} c_k\sin(k\theta) + d_k\cos(k\theta))
-$$
-$a_k,b_k,c_k,d_k$ are randomly generated in [-1, 1]. $order, radial\_amp, height\_amp$ are adjustable parameters. In additon, bank_ratio is also adjustable which is used when sweeping the centerline to the track surface.
+The centerline of the track in pump_track_random.hipnc is expressed by cylindrical coordinate $\left(\rho, \theta, z \right)$:
+
+$$\rho =\text{radial\\_amp} * (\sum _{k=3}^\text{order} a_k\sin(k\theta) + b_k\cos(k\theta))$$
+
+
+$$z = \text{height\\_amp} * (\sum _{k=3}^\text{order} c_k\sin(k\theta) + d_k\cos(k\theta))$$
+
+
+$a_k$, $b_k$, $c_k$, $d_k$ are randomly sampled in [-1, 1]. $\text{order}$, $\text{radial\\_amp}$, $\text{height\\_amp}$ are adjustable parameters. In additon, bank_ratio is also adjustable which is used when sweeping the centerline to the track surface.
 
 The track is stored in the node /obj/geo1/ray1, the centerline is stored in /obj/geo1/transformed_centerline.
-
